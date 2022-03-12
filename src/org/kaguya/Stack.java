@@ -14,10 +14,14 @@ public class Stack<E> {
             stack.push(4);
             System.out.println(stack.peek());
             System.out.println(stack.pop());
-            System.out.println(stack.pop());
 //            System.out.println(stack.pop());
+            System.out.println(stack.pop());
         } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
             System.exit(-1);
+        } catch (Throwable t) {
+            System.out.println("Error: " + t.getMessage());
+            System.exit(-2);
         }
 
     }
@@ -29,13 +33,20 @@ public class Stack<E> {
 //        array = (E[]) new Object[this.size];
     }
 
-    public E peek() {
-        return array[this.top];
+    public E peek() throws Exception {
+        if (top == -1)
+            throw new Exception("stack is empty");
+        else
+            return array[this.top];
     }
 
-    public E pop() {
-        this.top--;
-        return array[top + 1];
+    public E pop() throws Throwable {
+        if (top == -1)
+            throw new Exception("stack is empty");
+        else {
+            this.top--;
+            return array[top + 1];
+        }
     }
 
     public boolean isEmpty() {
@@ -48,7 +59,7 @@ public class Stack<E> {
 
     public void push(E elem) throws Exception {
         if (this.isFull())
-            throw new Exception("Stack overflow");
+            throw new Exception("stack overflow");
         else {
             this.top++;
             array[top] = elem;
