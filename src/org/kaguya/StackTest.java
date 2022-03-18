@@ -52,4 +52,33 @@ public class StackTest {
         Assert.assertFalse(checkBrackets(test_string2));
         Assert.assertFalse(checkBrackets(test_string3));
     }
+
+    private Stack toPolish(String string) {
+        Stack stack = new Stack();
+        char[] char_array = string.toCharArray();
+        for (int i = 0; i < char_array.length; i++) {
+            if (char_array[i] == ' ') {
+            } else if (Character.isDigit(char_array[i])) {
+                if ()
+            } else if (char_array[i] == '+' || char_array[i] == '-' || char_array[i] == '*' || char_array[i] == '/') {
+
+            }
+        }
+        return stack;
+    }
+
+
+    private double solvePolish(Stack polish_stack) {
+
+        return .0;
+    }
+
+    @Test
+    public void Second() {
+        Stack stack = new Stack();
+        String string = "5 - (2 + 2)";
+        if (checkBrackets(string)) {
+            System.out.println("check");
+        }
+    }
 }
