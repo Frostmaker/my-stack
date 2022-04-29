@@ -59,7 +59,7 @@ public class StackTest {
         for (int i = 0; i < char_array.length; i++) {
             if (char_array[i] == ' ') {
             } else if (Character.isDigit(char_array[i])) {
-                if ()
+                System.out.println();
             } else if (char_array[i] == '+' || char_array[i] == '-' || char_array[i] == '*' || char_array[i] == '/') {
 
             }
